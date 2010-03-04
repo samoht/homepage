@@ -20,7 +20,8 @@ and ent = {
   year: int option;
   title: string;
   misc: (string * string) list
-} with orm
+}
+and papers = ent list with orm, json
 
 let is_paper e = match e.ty with
   |Proceedings | Webpage |Misc -> false
